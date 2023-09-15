@@ -11,17 +11,8 @@ const Header = () => {
 
     const [searchUser, setSearchUser] = useState('')
 
-    const { login } = useSelector((state) => {
-        return {
-            login: state.login.login
-        }
-    })
-
-    const { list } = useSelector((state) => {
-        return {
-            list: state.users.list
-        }
-    })
+    const login = useSelector((state) => state.login.login)
+    const list = useSelector((state) => state.users.list)
 
     const handleChange = (e) => {
         setSearchUser(e.target.value)

@@ -11,17 +11,8 @@ export default function Home() {
   const router = useRouter()
   const [id, setId] = useState('')
 
-  const { list } = useSelector((state) => {
-    return {
-      list: state.users.list
-    }
-  })
-
-  const { login } = useSelector((state) => {
-    return {
-      login: state.login.login
-    }
-  })
+  const list = useSelector((state) => state.users.list)
+  const login = useSelector((state) => state.login.login)
 
   useEffect(() => {
     login && router.push(`/profile/${id}`)

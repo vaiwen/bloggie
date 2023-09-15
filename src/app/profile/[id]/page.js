@@ -16,11 +16,13 @@ const page = () => {
     const [text, setText] = useState('')
     const [verify, setVerify] = useState(false)
 
-    const { data } = useSelector((state) => {
-        return {
-            data: state.posts.data
-        }
-    })
+    // const { data } = useSelector((state) => {
+    //     return {
+    //         data: state.posts.data
+    //     }
+    // })
+
+    const data = useSelector((state) => state.posts.data)
 
     useEffect(() => {
         owner.slice(0, 4).toLowerCase() === pathname[2] && setVerify(!verify)
